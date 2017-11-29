@@ -4,6 +4,8 @@
     <title>Travel Bot VR</title>
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="https://rawgit.com/gasolin/aframe-href-component/master/dist/aframe-href-component.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.5.0/annyang.min.js"></script>
+    <script src="aframe-speech-command-component.js"></script>
 </head>
  
 <body>
@@ -14,11 +16,17 @@
             <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" dur="1500" fill="backwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation></a-cursor>
         </a-entity>
 
-       
+          <a-entity id="annyang" annyang-speech-recognition></a-entity>
+          
+        
        <a-entity gltf-model="https://raw.githubusercontent.com/coob113/travel/master/scene.gltf" scale="0.12 0.12 0.12" position="0.35 1.35 -0.8" rotation="-22 -150 -15"></a-entity>
        
        
-        <a-link title="Size" position="-0.93 1.5 -0.37" rotation="0 68 0" href="size.html" image="360/size.png" scale="0.25 0.25 0.25" > </a-link>
+        <a-link title="Size" position="-0.93 1.5 -0.37" rotation="0 68 0" href="size.html" image="360/size.png" scale="0.25 0.25 0.25" 
+        
+        speech-command__teleport="command: start move; type: function; targetComponent: querySelector; function: navigate; keyCode: 32"
+        
+        > </a-link>
         
         
         <a-sky src="https://raw.githubusercontent.com/coob113/travel/master/360/home.jpg"></a-sky>
