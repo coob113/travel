@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Bot VR</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+</head>
+ 
+<body>
+    <a-scene class="fullscreen" fog="far:100;color:black;near:0;density:0" >
+       <a-entity position="0 1.61 0" camera="userHeight:0.01" look-controls="" data-aframe-inspector-original-camera="">
+            <a-cursor color="white" opacity="0.5" raycaster="far: 100; objects: [link];" cursor="fuse: true; fuseTimeout: 1500">
+            <a-animation begin="click" easing="ease-in" attribute="scale" dur="150" fill="forwards" from="0.1 0.1 0.1" to="1.5 1.5 1.5"></a-animation>
+            <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" dur="1500" fill="backwards" from="1.5 1.5 1.5" to="0.1 0.1 0.1"></a-animation></a-cursor>
+        </a-entity>
+      
+        <a-assets>
+<!–– Backround ––>
+            <img id="sky" src="https://raw.githubusercontent.com/coob113/travel/master/360/Active/HikingUSA.jpg">
+            
+            <a-asset-item id="skull" src="https://raw.githubusercontent.com/coob113/travel/master/3d/scene.gltf"></a-asset-item>
+        </a-assets>
+        
+<!–– Skull ––>
+        <a-gltf-model src="#skull" scale="0.12 0.12 0.12" position="0.35 1.55 -0.8" rotation="-22 -140 -15">
+            <a-animation attribute="position" from="0.35 1.45 -0.8" to="0.35 1.25 -0.8" dur="4500" repeat="infinite" direction="alternate-reverse"></a-animation>
+            <a-animation attribute="rotation" dur="6000" fill="forwards" to="-22 -150 -15" repeat="indefinite" direction="alternate-reverse" easing="ease-in-out"></a-animation>
+        </a-gltf-model>
+       
+<!–– Text on Left ––>
+        <a-entity position="-0.514 1.759 -1.286" text__header="color:#ffffff;font:exo2semibold;height:2;letterSpacing:2;lineHeight:40;tabSize:5;value:How About Hiking in USA?;width:0.36;wrapCount:11" rotation="0 15 0"></a-entity>
+ 
+<!–– Text on Right ––>       
+        <a-entity position="0.978 1.771 -0.977" text__header="color:#ffffff;font:exo2semibold;height:2;letterSpacing:2;lineHeight:40;tabSize:5;value:Check Other Destinations;width:1;wrapCount:25" rotation="0 -30 0"></a-entity>
+        
+<!–– Portal on Left ––>       
+        <a-link title="Find Place to Stay" position="-0.48 1.196 -1.239" rotation="0 15 0" href="1.html" image="https://raw.githubusercontent.com/coob113/travel/master/360/Hotel/hotel1.jpg" scale="0.25 0.25 0.25" peekMode=""> </a-link>
+        
+<!–– Portals on Right ––>
+        <a-link title="Rafting in Norway" position="0.433 1.259 -1.175" rotation="0 -15 0" href="size.html" image="https://raw.githubusercontent.com/coob113/travel/master/360/Active/RaftingNorway.jpg" scale="0.25 0.25 0.25"> </a-link>
+        
+        <a-link title="Snowboarding in Switzerland" position="0.916 1.249 -0.956" rotation="0 -30 0" href="size.html" image="https://raw.githubusercontent.com/coob113/travel/master/360/Active/SnowbordingSwiss.jpg" scale="0.25 0.25 0.25"> </a-link>
+        
+        <a-link title="Try Find Safer Place" position="1.324 1.244 -0.609" rotation="0 -45 0" href="size.html" image="https://raw.githubusercontent.com/coob113/travel/master/360/Cultural/MajesticGermany.jpg" scale="0.25 0.25 0.25"> </a-link>
+        
+<!–– Background ––>
+        <a-entity position="-0.526 1.6 -1.323" geometry="primitive:plane" material="opacity:0.1;color:#0b1825" rotation="0 15 0" scale="0.6 0.8 1"></a-entity>
+        
+        <a-curvedimage src="" height="3.0" material="opacity:0.2;color:#0b1825" radius="5.7" theta-length="72" rotation="0 110 0" scale="0.8 0.8 0.8" position="0.131 1.616 0.216" geometry="height:0.7;thetaLength:70;radius:2"></a-curvedimage>
+
+               
+        <a-sky radius="10" src="#sky"></a-sky>
+
+</a-scene></body></html>
+
+
+
+
+
+
